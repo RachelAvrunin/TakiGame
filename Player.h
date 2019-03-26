@@ -1,15 +1,26 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "Card.h"
+#include "Game.h"
+#include <vector>
+#include <string>
+
+using namespace std;
+
 class Player {
 private:
-	// name;
-	// num_of_cards;
-	// container of cards
+	string name;
+	int num_of_cards;
+	vector <Card> myCards;
 	// more private members
 
 public:
-
+	Player();
+	Player(string name, int num_of_cards);
+	Player(const Player& p);
+	bool play( Card & cur);
+	string getName();
+	//Player& operator=(const Player& card);
 };
 #endif
 

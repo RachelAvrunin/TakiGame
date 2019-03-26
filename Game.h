@@ -2,12 +2,25 @@
 #define GAME_H
 #include "Player.h"
 #include "Card.h"
+#include <vector>
+
+using namespace std;
+
 class Game {
 private:
-	//private members and functions
+	int numOfPlayers;
+	vector <Player> myPlayers;
+	Card currCard;
+	int currTurn;
+	int diraction;
+
 public:
-	//public members and functions
+
+//	static bool gameOn;
+
+	Game();
 	void start();
+//	static void set_gameOn(bool);
 };
 #endif
 
