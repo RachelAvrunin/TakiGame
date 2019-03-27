@@ -1,7 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "Card.h"
-#include "Game.h"
 #include <vector>
 #include <string>
 
@@ -12,15 +11,16 @@ private:
 	string name;
 	int num_of_cards;
 	vector <Card> myCards;
-	// more private members
+
+
 
 public:
 	Player();
 	Player(string name, int num_of_cards);
 	Player(const Player& p);
-	bool play( Card & cur);
+	bool play(Card & cur);
 	string getName();
-	//Player& operator=(const Player& card);
+
 };
 #endif
 

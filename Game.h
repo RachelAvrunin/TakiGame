@@ -7,16 +7,19 @@
 using namespace std;
 
 class Game {
+
 private:
 	int numOfPlayers;
 	vector <Player> myPlayers;
 	Card currCard;
 	int currTurn;
 	int diraction;
+//	static bool gameOn;
+
 
 public:
 
-//	static bool gameOn;
+
 
 	Game();
 	void start();
