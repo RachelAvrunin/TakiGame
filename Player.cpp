@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Game.h"
 
 using namespace std;
 
@@ -12,7 +11,7 @@ Player::Player(){
 Player::Player(string name, int num_of_cards){
     this->name=name;
     this->num_of_cards=num_of_cards;
-    for(int i=0; i<num_of_cards;i++)
+    for(int i=0; i<num_of_cards; i++)
         this->myCards.push_back(Card::generate_card());
 }
 
@@ -27,7 +26,7 @@ string Player::getName(){
         return this->name;
 }
 
-bool Player::play( Card & cur){
+bool Player::play( Card & cur , bool & gameOn){
     cout<<"curret: "<<cur<<"\n";
     cout<<this->name<<", your turn -\n";
     cout<<"Your cards: ";
@@ -37,11 +36,12 @@ bool Player::play( Card & cur){
         cout<<"("<<i<<")"<<c<<" ";
         i++;
     }
-    
+    cout<<"\n";
+
     cin>>i;
 
     while((i>0)&&(i<=this->num_of_cards)&& (!cur.is_legal(myCards[i-1]))){
-        cout<<"you can't put "<<myCards[i-1]<<"on "<<cur<<"\n";
+        cout<<"you can't put "<<myCards[i-1]<<" on "<<cur<<"\n";
         cin>>i;
     }
 
@@ -49,6 +49,11 @@ bool Player::play( Card & cur){
 
         cur=myCards[i-1];
         myCards.erase(myCards.begin()+i-1);
+        num_of_cards--;
+        if(num_of_cards==0){
+            cout<<this->name<<" wins!";
+            gameOn=false;
+        }
         return true;  
 
     }
@@ -60,7 +65,7 @@ bool Player::play( Card & cur){
         }
         else{
             cout<<"This is an illegal selction, the game has ended!";
-            //Game::set_gameOn(false);
+            gameOn=false;
             return false; 
         }
         

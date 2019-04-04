@@ -18,7 +18,7 @@ public:
 	Player();
 	Player(string name, int num_of_cards);
 	Player(const Player& p);
-	bool play(Card & cur);
+	bool play(Card & cur,bool & flag);
 	string getName();
 
 };

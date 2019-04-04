@@ -3,6 +3,8 @@
 #include "Player.h"
 #include "Card.h"
 #include <vector>
+#include <string>
+#include <stdbool.h>
 
 using namespace std;
 
@@ -14,8 +16,10 @@ private:
 	Card currCard;
 	int currTurn;
 	int diraction;
-//	static bool gameOn;
+	bool gameOn;
 
+	void checkTurn_Direction1( int & turn, const int & pNum);
+	void checkTurn_Direction2( int & turn, const int & pNum);
 
 public:
 
@@ -23,7 +27,6 @@ public:
 
 	Game();
 	void start();
-//	static void set_gameOn(bool);
 };
 #endif
 
