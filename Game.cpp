@@ -37,14 +37,10 @@ using namespace std;
                 if(diraction==1){
                     currTurn+=2;
                     checkTurn_Direction1(currTurn,numOfPlayers);
-                    //while(currTurn>=numOfPlayers)
-                    //    currTurn-=numOfPlayers;
                 }
                 else{
                     currTurn-=2;
                     checkTurn_Direction2(currTurn,numOfPlayers);
-                    //while(currTurn<=numOfPlayers)
-                    //    currTurn+=numOfPlayers;                   
                 }
             }
             else if(played && currCard.get_sign()==sign::CD){
@@ -52,15 +48,12 @@ using namespace std;
                     diraction=0;
                     currTurn--;
                     checkTurn_Direction2(currTurn,numOfPlayers);
-                    //while(currTurn<=numOfPlayers)
-                    //    currTurn+=numOfPlayers;                     
+                 
                 }
                 else{
                     diraction=1;
                     currTurn++;
-                    checkTurn_Direction1(currTurn,numOfPlayers);
-                    //while(currTurn>=numOfPlayers)
-                    //    currTurn-=numOfPlayers;       
+                    checkTurn_Direction1(currTurn,numOfPlayers);   
                 }
            
             }
@@ -68,14 +61,10 @@ using namespace std;
                 if(diraction==1){
                     currTurn++;
                     checkTurn_Direction1(currTurn,numOfPlayers);
-                    //while(currTurn>=numOfPlayers)
-                    //    currTurn-=numOfPlayers;
                 }
                 else{
                     currTurn--;
                     checkTurn_Direction2(currTurn,numOfPlayers);
-                    //while(currTurn<=numOfPlayers)
-                    //    currTurn+=numOfPlayers;
                 }                   
             }
 
