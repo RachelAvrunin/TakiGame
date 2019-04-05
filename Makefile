@@ -1,5 +1,5 @@
-CXX=clang++-5.0
-CXXFLAGS=-std=c++14
+CXX=g++
+CXXFLAGS=-std=c++0x
 
 all: main.o Card.o Game.o Player.o
 	$(CXX) main.o Card.o Game.o Player.o -o a.out

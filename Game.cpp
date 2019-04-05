@@ -12,18 +12,17 @@ using namespace std;
     void Game::start(){
         cout<<"How many players?\n";
         cin>>numOfPlayers;
-        while(numOfPlayers<=0){
-            cout<<"illegal number of players! choose again\n";
-            cin>>numOfPlayers;
+        if(numOfPlayers<=0){
+            cout<<"illegal number of players!";
+            return;
        }
         cout<<"How many cards?\n";
         int numOfCards;
         cin>>numOfCards;
-        while(numOfCards<=0){
-            cout<<"illegal number of cards! choose again\n";
-            cin>>numOfCards;
+        if(numOfCards<=0){
+            cout<<"illegal number of cards!";
+            return;
         }
-        currCard=Card::generate_card();
         for(int i=0; i<numOfPlayers; i++){
             string name;
             cout<<"player number "<<i+1<<" name?\n";
@@ -31,6 +30,7 @@ using namespace std;
             Player p (name,numOfCards);
             Game::myPlayers.push_back(p);
         }
+        currCard=Card::generate_card();
         while(gameOn){
             bool played=myPlayers[currTurn].play(currCard,gameOn);\
             if(played && currCard.get_sign()==sign::STOP){

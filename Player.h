@@ -8,18 +8,17 @@ using namespace std;
 
 class Player {
 private:
+
 	string name;
 	int num_of_cards;
 	vector <Card> myCards;
 
-
-
 public:
 	Player();
-	Player(string name, int num_of_cards);
+	Player(const string name, const int num_of_cards);
 	Player(const Player& p);
-	bool play(Card & cur,bool & flag);
-	string getName();
+	Player operator = (const Player & p);
+	bool play(Card & cur,bool & gameOn);
 
 };
 #endif

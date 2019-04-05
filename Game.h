@@ -17,16 +17,16 @@ private:
 	int currTurn;
 	int diraction;
 	bool gameOn;
-
 	void checkTurn_Direction1( int & turn, const int & pNum);
 	void checkTurn_Direction2( int & turn, const int & pNum);
+	Game(const Game & g);
+	Game operator = (const Game & g);
 
 public:
 
-
-
 	Game();
 	void start();
+
 };
 #endif
 
